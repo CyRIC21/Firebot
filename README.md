@@ -1,2 +1,2 @@
 # Firebot
-idk
+Frozencord
