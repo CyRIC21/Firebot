@@ -8,8 +8,8 @@ class CommandCounter extends Inhibitor {
         this.description = "template inhibitor that is run when a users command has finished running.";
     }
 
-    run(message, command) { // eslint-disable-line
-        // Do code here
+        async run(message, command) {
+            console.log(`${message.author.tag} ran ${command.name}`);
     }
 
 }
