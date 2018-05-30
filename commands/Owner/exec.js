@@ -20,7 +20,7 @@ class Eval extends Command {
         this.botPerms = ["SEND_MESSAGES", "EMBED_LINKS"];
         this.aliases = [];
     }
-    async run (message, args) {
+    async run (message, args, [code]) {
         exec(`${args.join(' ')}`, (error, stdout) => {
             const response = (error || stdout);
             message.channel.send(`Ran: ${args.join(" ")}\n${response}`, {code: "asciidoc", split: "\n"}).catch(console.error);
