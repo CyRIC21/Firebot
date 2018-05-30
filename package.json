@@ -34,7 +34,6 @@
     "moment": "^2.20.1",
     "moment-duration-format": "^2.2.0",
     "mongoose": "^5.0.15",
-    "node-opus": "^0.3.0",
     "parse-ms": "^1.0.1",
     "pastebin-js": "^0.5.1",
     "pm2": "^2.10.3",
@@ -42,15 +41,12 @@
     "querystring": "^0.2.0",
     "relevant-urban": "^2.0.0",
     "request": "^2.85.0",
-    "simple-youtube-api": "^5.0.2",
     "snekfetch": "^4.0.0",
     "superagent": "^3.8.2",
     "table": "^4.0.3",
     "twemoji": "^2.5.1",
     "unfluff": "^3.0.0",
     "url": "^0.11.0",
-    "uws": "^9.147.0",
-    "webhooks4discord": "^1.0.0",
-    "ytdl-core": "^0.20.4"
+    "uws": "^9.147.0"
   }
 }
