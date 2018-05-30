@@ -22,7 +22,7 @@ class Eval extends Command {
 
     replace(output) {
         return output
-            .replace(new RegExp(this.client.token), "Nani?");
+            .replace(new RegExp(this.client.token), "nope");
     }
 
     haste(text) {
