@@ -20,7 +20,7 @@ class CommandCounter extends Inhibitor {
 
         async run(message, command) {
             console.log(`${message.author.tag} ran ${command.name}`);
-            client.channels.get("421483893754167318").message.channel.send(`${message.author.tag} ran ${command.name}`)
+            client.channels.get("421483893754167318"); await message.channel.send(`${message.author.tag} ran ${command.name}`)
     }
 
 }
