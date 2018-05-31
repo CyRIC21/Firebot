@@ -4,8 +4,8 @@ class exec extends Command {
 
     constructor(client) {
         super(client);
-        this.name = "invite";
-        this.description = "Invite FireBot.";
+        this.name = "exec";
+        this.description = "execute something.";
         this.guildOnly = true;
         this.ownerOnly = true;
         this.args = [
