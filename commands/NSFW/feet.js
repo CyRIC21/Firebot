@@ -1,5 +1,6 @@
 const { Command } = require("frozencord");
-const superagent = require("superagent"); // eslint-disable-line
+const superagent = require("superagent"); 
+const { RichEmbed } = require("discord.js");// eslint-disable-line
 
 class invite extends Command {
 
