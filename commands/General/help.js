@@ -16,7 +16,7 @@ class Help extends Command {
     }
 
     async run (message) {
-        message.channel.send("Firebot's command list: ``f.eval``: Evaluate code. ``f.finduser``: find a user. ``f.help``: Shows this message")
+        message.channel.send("Firebot's command list: ``f.eval``: Evaluate code. ``f.finduser``: find a user. ``f.help``: Shows this message. ``f.invite``: invite FireBot to your server. ``f.support`` get the support server for FireBot. ``f.exec``: execute something from the command line ``f.feet``: Get some feet porn")
     }
 
 }
