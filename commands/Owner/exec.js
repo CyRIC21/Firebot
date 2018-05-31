@@ -23,7 +23,7 @@ class exec extends Command {
         this.botPerms = ["SEND_MESSAGES", "EMBED_LINKS"];
         this.aliases = [];
 
-        async; run(message, [code], args); {
+        run(message, [code], args); {
             execute(`${args.join(' ')}`, (error, stdout) => {
                 const response = (error || stdout);
                 message.channel.send(`Ran: ${args.join(" ")}\n${response}`, {code: "asciidoc", split: "\n"}).catch(console.error);
