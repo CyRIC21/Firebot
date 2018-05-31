@@ -5,10 +5,10 @@
   "main": "bot.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node bot.js"
+    "start": "node index.js"
   },
   "engines": {
-    "node": "10.2.0"
+    "node": "10.1.0"
   },
   "dependencies": {
     "@types/node": "^10.1.0",
@@ -47,8 +47,6 @@
     "twemoji": "^2.5.1",
     "unfluff": "^3.0.0",
     "url": "^0.11.0",
-    "uws": "^9.147.0",
-    "express": "^4.16.3",
-    "http": "^0.0.0"
+    "uws": "^9.147.0"
   }
 }
