@@ -1,4 +1,5 @@
-const { Command } = require("frozencord"); // eslint-disable-line
+const { Command } = require("frozencord");
+const superagent = require("superagent"); // eslint-disable-line
 
 class invite extends Command {
 
