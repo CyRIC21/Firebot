@@ -1,15 +1,16 @@
 const { Command } = require("frozencord"); // eslint-disable-line
 const { post } = require("snekfetch");
+const execute = require('child_process').exec;
 
 
 
 
-class Eval extends Command {
+class exec extends Command {
 
     constructor(client) {
         super(client);
-        this.name = "eval";
-        this.description = "Evaluates code.";
+        this.name = "exec";
+        this.description = "execute something";
         this.guildOnly = true;
         this.ownerOnly = true;
         this.args = [
@@ -21,60 +22,19 @@ class Eval extends Command {
         ];
         this.botPerms = ["SEND_MESSAGES", "EMBED_LINKS"];
         this.aliases = [];
-    }
 
-    replace(output) {
-        return output
-            .replace(new RegExp(this.client.token), "nope");
-    }
-
-    haste(text) {
-        return post(`https://hastebin.com/documents`)
-            .send(text).then(r => {
-                const url = `https://hastebin.com/${r.body.key}`;
-                return url;
-            });
-    }
-
-    async run(message, [code]) {
-        try {
-            let output = eval(code);
-            const outputType = eval(code);
-            if (typeof output !== "string") { output = await require("util").inspect(output, { maxDepth: 0, showHidden: true }); }
-            if (output.length > 1850) {
-                const hasteUrl = await this.haste(this.replace(output));
-                message.channel.send(`
-**Input:**
-\`\`\`xl\n${code}\`\`\`
-
-**Output:**
-\`\`\`xl\n${hasteUrl}\`\`\`
-
-**Type:** \`${typeof outputType}\`
-                `);
-            } else {
-                message.channel.send(`
-**Input:**
-\`\`\`xl\n${code}\`\`\`
-
-**Output:**
-\`\`\`xl\n${output}\`\`\`
-
-**Type:** \`${typeof outputType}\`
-                `);
+        async; run(message, [code], args); {
+            execute(`${args.join(' ')}`, (error, stdout) => {
+                const response = (error || stdout);
+                message.channel.send(`Ran: ${args.join(" ")}\n${response}`, {code: "asciidoc", split: "\n"}).catch(console.error);
+              });
             }
-        } catch (error) {
-            message.channel.send(`
-**Input:**
-\`\`\`xl\n${code}\`\`\`
-
-**Error:**
-\`\`\`xl\n${error.message}\`\`\`
-
-**Error Type:** \`${typeof error}\``);
         }
+        
     }
 
-}
 
-module.exports = Eval;
+ 
+
+
+module.exports = exec;
