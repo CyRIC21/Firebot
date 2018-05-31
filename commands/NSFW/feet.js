@@ -21,7 +21,7 @@ class invite extends Command {
         .get(`https://nekos.life/api/v2/img/feet`);
         if (!message.channel.nsfw) message.reply(" You must be in a N.S.F.W channel to use this command.");
       
-        let hentaiEmbed = new Discord.MessageEmbed()
+        let hentaiEmbed = new MessageEmbed()
         .setColor("RANDOM")
         .setTitle("Hentai")
         .setImage(body.url)
