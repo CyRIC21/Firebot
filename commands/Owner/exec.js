@@ -1,5 +1,5 @@
 const { Command } = require("frozencord"); // eslint-disable-line
-const execute = require('child_process').exec;
+const execute = require("child_process").exec;
 class exec extends Command {
 
     constructor(client) {
@@ -17,11 +17,11 @@ class exec extends Command {
         ];
     }
 
-    async run (message, [code], args) {
-        execute(`${args.join(' ')}`, (error, stdout) => {
+    async run (message, args) {
+        execute(`${args.join(" ")}`, (error, stdout) => {
             const response = (error || stdout);
             message.channel.send(`Ran: ${args.join(" ")}\n${response}`, {code: "asciidoc", split: "\n"}).catch(console.error);
-        })
+        });
     }
 
 }

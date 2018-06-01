@@ -29,7 +29,7 @@ class Eval extends Command {
     }
 
     haste(text) {
-        return post(`https://hastebin.com/documents`)
+        return post("https://hastebin.com/documents")
             .send(text).then(r => {
                 const url = `https://hastebin.com/${r.body.key}`;
                 return url;

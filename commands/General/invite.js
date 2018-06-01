@@ -16,7 +16,7 @@ class invite extends Command {
     }
 
     async run (message) {
-        message.channel.send("Firebot's invite: https://discordapp.com/oauth2/authorize?client_id=451404736848068621&scope=bot&permissions=8 ")
+        message.channel.send("Firebot's invite: https://discordapp.com/oauth2/authorize?client_id=451404736848068621&scope=bot&permissions=8 ");
     }
 
 }
