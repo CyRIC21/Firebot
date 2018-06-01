@@ -20,7 +20,7 @@ class ping extends Command {
     async run (message) {
         const embed = new RichEmbed()
         .setColor(15400990)
-        .setDescription(`${this.client.emojis.find(x => x.name === "loading1")} ${this.client.emojis.find(x => x.name === "loading2")} ${this.client.emojis.find(x => x.name === "loading3")} ${this.client.emojis.find(x => x.name === "loading")} Pong! Time - **${Date.now() - message.createdTimestamp}ms** API Latency is **${Math.round(this.client.ping)}ms** ${this.client.emojis.find(x => x.name === "loading1")} ${this.client.emojis.find(x => x.name === "loading2")} ${this.client.emojis.find(x => x.name === "loading3")} ${this.client.emojis.find(x => x.name === "loading4")}`);
+        .setDescription(`${this.client.emojis.find(x => x.name === "loading1")} ${this.client.emojis.find(x => x.name === "loading2")} ${this.client.emojis.find(x => x.name === "loading3")} ${this.client.emojis.find(x => x.name === "loading")} Pong! Time - **${Date.now() - message.createdTimestamp}ms** API Latency is **${Math.round(this.client.ping)}ms** ${this.client.emojis.find(x => x.name === "loading1")} ${this.client.emojis.find(x => x.name === "loading2")} ${this.client.emojis.find(x => x.name === "loading3")} ${this.client.emojis.find(x => x.name === "loading")}`);
       message.channel.send(embed);
     }
 
