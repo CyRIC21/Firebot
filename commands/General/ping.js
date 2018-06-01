@@ -20,7 +20,7 @@ class ping extends Command {
     async run (message) {
         const embed = new RichEmbed()
         .setColor(15400990)
-        .setDescription(`${this.client.emojis.find(x => x.name === "loading")} ${this.client.emojis.find(x => x.name === "loading2")} ${this.client.emojis.find(x => x.name === "loading3")} Pong! Time - **${Date.now() - message.createdTimestamp}ms** API Latency is **${Math.round(this.client.ping)}ms** ${this.client.emojis.find(x => x.name === "loading")} ${this.client.emojis.find(x => x.name === "loading2")} ${this.client.emojis.find(x => x.name === "loading3")}`);
+        .setDescription(`${this.client.emojis.find(x => x.name === "loading")} ${this.client.emojis.find(x => x.name === "loading2")} ${this.client.emojis.find(x => x.name === "loading3")} Pong! Time - **${Date.now() - message.createdTimestamp}ms** API Latency is **${Math.round(this.client.ping)}ms** ${this.client.emojis.find(x => x.name === "loading3")} ${this.client.emojis.find(x => x.name === "loading2")} ${this.client.emojis.find(x => x.name === "loading1")}`);
       message.channel.send(embed);
     }
 
