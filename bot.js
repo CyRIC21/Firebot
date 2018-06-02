@@ -19,7 +19,7 @@ const client = new FrozenClient({
     ownerId: "349674631260667925", 
     readyMessage: (client) => `Ready as ${client.user.tag}`, 
     game: {
-        name: `f.help`,
+        name: `with ${client.guilds.size > 1 ? `${client.guilds.size} guilds` : `1 guild`} | f.help`,
         type: "PLAYING"
     } 
 });
