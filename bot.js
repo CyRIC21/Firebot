@@ -1,7 +1,7 @@
 const http = require('http');
 const express = require('express');
 const app = express();
-const fs = require("fs");
+const mongoose = require("mongoose");
 app.get("/", (request, response) => {
 //  console.log(Date.now() + " Ping Received");
   response.sendStatus(200);
@@ -24,17 +24,12 @@ const client = new FrozenClient({
     } 
 });
 
+mongoose.connect(process.env.MONGODB);
+client.db = mongoose.connection;
+client.db.once("open", () => console.log("Connected to MongoDB"));
+client.db.on("error", (err) => console.error(err));
 
-fs.readdir("./events/", (err, files) => {
-  if (err) return console.error(err);
-  files.forEach(file => {
-    if (!file.endsWith(".js")) return;
-    const event = require(`./events/${file}`);
-    let eventName = file.split(".")[0];
-    client.on(eventName, event.bind(null, client));
-    delete require.cache[require.resolve(`./events/${file}`)];
-  });
-});
+
 
 
 
