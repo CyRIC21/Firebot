@@ -17,7 +17,8 @@ class exec extends Command {
         ];
     }
 
-    async run (message, args) {
+    async run (message) {
+        const args = message.content.slice(this.client.prefix.length).trim().split(/ +/g);
         execute(`${args.join(" ")}`, (error, stdout) => {
             const response = (error || stdout);
             message.channel.send(`Ran: ${args.join(" ")}\n${response}`, {code: "asciidoc", split: "\n"}).catch(console.error);
